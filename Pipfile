@@ -9,6 +9,7 @@ djangorestframework = "*"
 channels = "*"
 asgi-redis = "*"
 channels-redis = "*"
+django-environ = "*"
 
 [dev-packages]
 
