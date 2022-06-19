@@ -1,11 +1,11 @@
-from channels.generic.websocket import AsyncWebsocketConsumer
+from channels.generic.websocket import WebsocketConsumer
 from asgiref.sync import async_to_sync
 
 import json
 
 
-class ChatConsumer(AsyncWebsocketConsumer):
-    async def connect(self):
+class ChatConsumer(WebsocketConsumer):
+    def connect(self):
         self.name = self.scope['url_route']['kwargs']['name']
 
         async_to_sync(self.channel_layer.group_add)(
